@@ -143,8 +143,68 @@ article h2{
   background-color: var(--destaque-inverso);
   border-radius: 10px;
 }
-@media screen and(min-width: 768px) {
+div#formacontainer{
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 15px;
+}
+div#formacontainer .curso{
+  margin-top: 15px;
+  background-color: var(--fundo-principal);
+  border-radius: 10px;
+  border-left: 5px solid var(--destaque-inverso);
+  transition: border-width 0.5s ease border-color 0.3s ease;
+  padding-left: 15px;
+}
+div#formacontainer .curso:hover{
+  border-color: var(--destaque);
+  cursor: pointer;
+  border-left-width: 15px;
+  padding: 10px;
+}
+#projetocontainer{
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+}
+#projetocontainer .projeto{
+ display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: var(--fundo-principal);
+  border-radius: 10px;
+  padding: 10px;
+  border-left: 5px solid var(--destaque-inverso);
+  transition: border-width 0.5s ease border-color 0.3s ease;
+}
+#projetocontainer .projeto:hover{
+  border-color: var(--destaque);
+  cursor: pointer;
+  border-left-width: 15px;
+  padding: 5px;
+}
+
+#projetocontainer .foto{
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 10px;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
   #habcontainer{
     grid-template-columns: 1fr 1fr;
+  }
+  #projetocontainer .projeto{
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  #projetocontainer.foto{
+    max-width: 20%;
+    max-height: 200px;
+    aspect-ratio: 1/1;
+  }
+  #projetocontainer .projeto-info{
+    max-width: 80%;
   }
 }
